@@ -142,27 +142,6 @@
         .del img {
             width: 50%;
         }
-        
-        .hide {
-            position: relative;
-        }
-        
-        .hide:after,
-        .hide:before {
-            border: 10px solid transparent;
-            border-bottom: 10px solid #fff;
-            width: 0;
-            height: 0;
-            position: absolute;
-            top: 0;
-            right: -20px;
-            content: ' '
-        }
-        
-        .hide:before {
-            border-top-color: #dadada;
-            right: -21px;
-        }
     </style>
 </head>
 
@@ -174,7 +153,10 @@
     <!-- 键盘 -->
 
     <div class="num-box">
-        <div class="hide"> </div>
+        <div class="hide">
+            <img src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABQAAD/4QMqaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjUtYzAxNCA3OS4xNTE0ODEsIDIwMTMvMDMvMTMtMTI6MDk6MTUgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTAxMUI0NUJBNDZDMTFFNTk2NEZEMDVBMENBQTc2NDYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTAxMUI0NUNBNDZDMTFFNTk2NEZEMDVBMENBQTc2NDYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1MDExQjQ1OUE0NkMxMUU1OTY0RkQwNUEwQ0FBNzY0NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1MDExQjQ1QUE0NkMxMUU1OTY0RkQwNUEwQ0FBNzY0NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEAAICAgICAgICAgIDAgICAwQDAgIDBAUEBAQEBAUGBQUFBQUFBgYHBwgHBwYJCQoKCQkMDAwMDAwMDAwMDAwMDAwBAwMDBQQFCQYGCQ0LCQsNDw4ODg4PDwwMDAwMDw8MDAwMDAwPDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDP/AABEIACAAXQMBEQACEQEDEQH/xABsAAADAQEBAAAAAAAAAAAAAAAABQYBBAkBAQAAAAAAAAAAAAAAAAAAAAAQAAECBQMDAwIEBwAAAAAAAAECAwARIQQFMRIGQVETYYEUcSKhMiMV4UJiM1NjFhEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A9w8reXNhZO3Npj3Mo83I/CaO1ak/zKB9O0Bw4fk2JzY2Wlx4rpAAfs7hPiebVWaSkyHShEA/rrIpSaAGU6awBAEAQBAEAQBpWYHSep9gaQExmOV4vEuCzbDuUyq6W+Ksx5HFLptC1iiQYBv8u8/bfmftbvzvFvGHmPL5f8e7T3gGBqJGomDLpMaQCDM8axWbIeumC1foozk2T430E/7EyUdNJwE8bnlXGDsu2lcsxSBL5FukJv2091ND849QZwFVi87i822HMXcoeWgAPMfkdbPZbTn3A0gG34+v8IAgCADMDcZhAopQANTpQwCHMcmxOEKW7t4uXi/7GOtkm4fWaUShGs51J0gECrflvJRtu3DxLEuV+MyoO3ziD0WtMkpBloKjrAU2JwWJwjRaxtohhShJ96e9xz1W4fuM+xMA4mZSnSW2Xp2gMgCA0FW0gEiRBkICXzHEMVlnfmseXF5JFW8lZ/pupUeqimRUKaGAUnL8l44rbn7M57FIG0ZqwSS6kDq6wmR9x7wFbjcrjcxbpu8Zdt3jJSZlCgUgjUKNDPuJUgOfL8gxOEZDuRu22i4P0rdE3HHFHRLbaPvJgJldxyzkkhatf8li1iXynUg37iO6W1TDYPdVT7QFBh+M4nCAuWrBeu3ZefJPHyuuETr5D9dBAP5kCQNO0BkAQBAEAQAa61lpAaNSdJ039B9YCRyXEMbdXKsli33MBldwBvrIyC1dnGxIGfrAdGL4ni8W6bt8uZPLrO64yF0S67u/pKp7E1oBAUx79DUCAzqT1OpgCAIAgP/Z"
+                alt="">
+        </div>
         <ul class="list">
             <li><a href="javascript:void(0);">1</a></li>
             <li><a href="javascript:void(0);" class="zj_x">2</a></li>
