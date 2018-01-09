@@ -26,7 +26,7 @@
         <div class="wxzf_price">￥11.90</div>
     </div> -->
 
-    <input type="number" id="pay" readonly placeholder="请输入数字">
+    <input type="number" id="pay" placeholder="请输入数字">
 
     <!--浮动层-->
 
@@ -59,7 +59,7 @@
             });
             //关闭浮动
             $(".close").click(function() {
-                $(".ftc_wzsf").hide();
+                $(".ftc_wzsf").slideDown(500);
             });
             //数字显示隐藏
             $(".xiaq_tb").click(function() {
