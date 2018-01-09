@@ -6,9 +6,39 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/lanren.css">
+
+</head>
+
+<body>
+
+    <input type="number" id="pay" readonly="readonly" placeholder="请输入数字">
+
+    <!--浮动层-->
+
+    <div class="ftc_wzsf">
+        <div class="numb_box">
+            <div class="xiaq_tb"> <img src="images/jftc_14.jpg" height="10"> </div>
+            <ul class="nub_ggg">
+                <li><a href="javascript:void(0);">1</a></li>
+                <li><a href="javascript:void(0);" class="zj_x">2</a></li>
+                <li><a href="javascript:void(0);">3</a></li>
+                <li><a href="javascript:void(0);">4</a></li>
+                <li><a href="javascript:void(0);" class="zj_x">5</a></li>
+                <li><a href="javascript:void(0);">6</a></li>
+                <li><a href="javascript:void(0);">7</a></li>
+                <li><a href="javascript:void(0);" class="zj_x">8</a></li>
+                <li><a href="javascript:void(0);">9</a></li>
+                <li><span>.</span></li>
+                <li><a href="javascript:void(0);" class="zj_x">0</a></li>
+                <li><span class="del"> <img src="images/jftc_18.jpg"   ></span></li>
+            </ul>
+        </div>
+        <div class="hbbj"></div>
+    </div>
     <script src="js/jquery.js"></script>
     <script type="text/javascript">
         $(function() {
+            $('.ftc_wzsf').slideUp(500);
             //出现浮动层
             $("#pay").on('click', function() {
                 $(".ftc_wzsf").slideUp(500);
@@ -50,50 +80,6 @@
             });
         });
     </script>
-</head>
-
-<body>
-    <!-- <div class="header">
-        <div class="all_w ">
-            <div class="gofh">
-                <a href="#"><img src="images/jt_03.jpg"></a>
-            </div>
-            <div class="ttwenz">
-                <h4>确认交易</h4>
-                <h5>微信安全支付</h5>
-            </div>
-        </div>
-    </div>
-    <div class="wenx_xx">
-        <div class="mz">楚楚街微信商城</div>
-        <div class="wxzf_price">￥11.90</div>
-    </div> -->
-
-    <input type="number" id="pay" readonly="readonly" placeholder="请输入数字">
-
-    <!--浮动层-->
-
-    <div class="ftc_wzsf">
-        <div class="numb_box">
-            <div class="xiaq_tb"> <img src="images/jftc_14.jpg" height="10"> </div>
-            <ul class="nub_ggg">
-                <li><a href="javascript:void(0);">1</a></li>
-                <li><a href="javascript:void(0);" class="zj_x">2</a></li>
-                <li><a href="javascript:void(0);">3</a></li>
-                <li><a href="javascript:void(0);">4</a></li>
-                <li><a href="javascript:void(0);" class="zj_x">5</a></li>
-                <li><a href="javascript:void(0);">6</a></li>
-                <li><a href="javascript:void(0);">7</a></li>
-                <li><a href="javascript:void(0);" class="zj_x">8</a></li>
-                <li><a href="javascript:void(0);">9</a></li>
-                <li><span>.</span></li>
-                <li><a href="javascript:void(0);" class="zj_x">0</a></li>
-                <li><span class="del"> <img src="images/jftc_18.jpg"   ></span></li>
-            </ul>
-        </div>
-        <div class="hbbj"></div>
-    </div>
-
 </body>
 
 </html>
