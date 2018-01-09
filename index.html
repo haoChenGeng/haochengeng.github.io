@@ -5,8 +5,132 @@
     <title>模拟数字键盘</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
-    <link rel="stylesheet" type="text/css" href="css/lanren.css">
-
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            font: 12px "微软雅黑", Arial;
+            background: #efeff4;
+            min-width: 320px;
+            max-width: 640px;
+            color: #000;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #666666;
+        }
+        
+        a,
+        img {
+            border: none;
+        }
+        
+        img {
+            vertical-align: middle;
+        }
+        
+        ul,
+        li {
+            list-style: none;
+        }
+        
+        em,
+        i {
+            font-style: normal;
+        }
+        
+        .clear {
+            clear: both
+        }
+        
+        .clear_wl:after {
+            content: ".";
+            height: 0;
+            visibility: hidden;
+            display: block;
+            clear: both;
+        }
+        
+        .xiaq_tb {
+            padding: 5px 0;
+            text-align: center;
+            border-top: 1px solid #dadada;
+        }
+        
+        .numb_box {
+            position: absolute;
+            z-index: 10;
+            background: #f5f5f5;
+            width: 100%;
+            bottom: 0px;
+            display: none;
+        }
+        
+        .nub_ggg {
+            border: 1px solid #dadada;
+            overflow: hidden;
+            border-bottom: none;
+        }
+        
+        .nub_ggg li {
+            width: 33.3333%;
+            border-bottom: 1px solid #dadada;
+            float: left;
+            text-align: center;
+            font-size: 22px;
+        }
+        
+        .nub_ggg li a {
+            display: block;
+            color: #000;
+            height: 50px;
+            line-height: 50px;
+            overflow: hidden;
+        }
+        
+        .nub_ggg li a:active {
+            background: #e0e0e0;
+        }
+        
+        .nub_ggg li a.zj_x {
+            border-left: 1px solid #dadada;
+            border-right: 1px solid #dadada;
+        }
+        
+        .nub_ggg li span {
+            display: block;
+            color: #e0e0e0;
+            background: #e0e0e0;
+            height: 50px;
+            line-height: 50px;
+            overflow: hidden;
+        }
+        
+        .nub_ggg li span.del img {
+            width: 30%;
+        }
+        
+        #pay {
+            width: 90%;
+            height: 40px;
+            margin: 20px auto;
+            display: block;
+        }
+        
+        .commit {
+            width: 90%;
+            height: 40px;
+            margin: 20px auto;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,10 +155,10 @@
             <li><a href="javascript:void(0);">.</a>
             </li>
             <li><a href="javascript:void(0);" class="zj_x">0</a></li>
-            <li><span class="del"> <img src="images/jftc_18.jpg"   ></span></li>
+            <li>X</li>
         </ul>
     </div>
-    <script src="js/jquery.js"></script>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
     <script type="text/javascript">
         $(function() {
             //键盘操作
@@ -50,27 +174,24 @@
             //显示数字
             var res = [];
             $(".nub_ggg li a").click(function() {
-                console.log($(this).html())
-                if (res[0] == '.') {
-                    res = [];
-                } else if ($(this).html() == '.') {
+                if ($(this).html() == '.') {
                     if (res.indexOf('.') === -1) {
                         res.push($(this).html());
                     }
                 } else {
                     res.push($(this).html());
                 }
-                console.log(res);
+                if (res[0] == '.') {
+                    res = [];
+                }
                 $('#pay').val(res.join(''));
             });
 
+            //删除数字
             $('.del').on('click', function() {
                 res.pop();
-                console.log(res);
                 $('#pay').val(res.join(''));
-
             })
-
         });
     </script>
 </body>
