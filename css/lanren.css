@@ -446,6 +446,7 @@ i {
 .commit {
     width: 90%;
     height: 40px;
+    margin: 20px auto;
     line-height: 40px;
     text-align: center;
     border: 1px solid #ccc;
