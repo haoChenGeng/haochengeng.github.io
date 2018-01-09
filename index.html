@@ -120,6 +120,7 @@
             margin: 20px 5%;
             padding: 0 5px;
             display: block;
+            box-sizing: border-box;
         }
         
         .commit {
@@ -202,9 +203,16 @@
             });
 
             //删除数字
-            $('.del').click(function() {
+            $('.del img').click(function() {
                 res.pop();
                 $('#pay').val(res.join(''));
+            })
+
+            //结果
+            $('.commit').click(function() {
+
+                $('#pay').val(res.join('').replace(/\.*$/, ''));
+                alert('输入的数字为：' + parseFloat(('#pay').val()));
             })
         });
     </script>
