@@ -38,10 +38,13 @@
     <script src="js/jquery.js"></script>
     <script type="text/javascript">
         $(function() {
-            $('.numb_box').css({
-                top: $(window).height()
-            })
-            $('.numb_box').slideDown(500);
+            // $('.numb_box').css({
+            //     top: $(window).height()
+            // })
+            setTimeout(() => {
+                $('.numb_box').slideDown(500);
+
+            }, 3000);
             //出现浮动层
             $("#pay").on('click', function() {
                 $('.numb_box').slideDown(500);
