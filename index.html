@@ -41,9 +41,7 @@
     <script type="text/javascript">
         $(function() {
             //出现浮动层
-            $('.numb_box').css({
-                display: 'none'
-            });
+
             $('.numb_box').slideUp();
             $("#pay").on('click', function() {
                 $('.numb_box').slideDown(500);
@@ -67,8 +65,9 @@
                 res.push($(this).html());
                 if (res[0] == '.') {
                     res = [];
-                }
-                if (res.indexOf('.') != -1) {
+                } else if ($(this).html() == '.' && res.indexOf('.') === -1) {
+                    res.push($(this).html());
+                } else {
                     res.push($(this).html());
                 }
                 console.log(res);
