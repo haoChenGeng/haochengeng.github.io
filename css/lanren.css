@@ -437,6 +437,8 @@ i {
 }
 
 #pay {
+    width: 90%;
     height: 40px;
     margin: 20px auto;
+    display: block;
 }
