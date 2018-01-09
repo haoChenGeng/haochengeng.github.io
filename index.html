@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>前端模拟微信app支付页面效果</title>
+    <title>模拟数字键盘</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/lanren.css">
@@ -11,12 +11,11 @@
 
 <body>
 
-    <input type="number" id="pay" readonly="readonly" placeholder="请输入数字">
+    <input type="text" id="pay" readonly="readonly" placeholder="请输入数字">
     <div class="commit">确定</div>
 
-    <!--浮动层-->
+    <!-- 键盘 -->
 
-    <!-- <div class="ftc_wzsf"> -->
     <div class="numb_box">
         <div class="xiaq_tb"> <img src="images/jftc_14.jpg" height="10"> </div>
         <ul class="nub_ggg">
@@ -35,30 +34,20 @@
             <li><span class="del"> <img src="images/jftc_18.jpg"   ></span></li>
         </ul>
     </div>
-    <!-- <div class="hbbj"></div> -->
-    <!-- </div> -->
     <script src="js/jquery.js"></script>
     <script type="text/javascript">
         $(function() {
-            //出现浮动层
-
+            //键盘操作
             $('.numb_box').slideUp();
             $("#pay").on('click', function() {
                 $('.numb_box').slideDown(500);
             });
-            //关闭浮动
-            $(".close").click(function() {
-                $(".ftc_wzsf").slideDown(500);
-            });
-            //数字显示隐藏
+
             $(".xiaq_tb").click(function() {
                 $(".numb_box").slideUp(500);
             });
-            $(".mm_box").click(function() {
-                $(".numb_box").slideDown(500);
-            });
-            //----
 
+            //显示数字
             var res = [];
             $(".nub_ggg li a").click(function() {
                 console.log($(this).html())
@@ -72,8 +61,6 @@
                 console.log(res);
                 $('#pay').val(res.join(''));
             });
-
-
         });
     </script>
 </body>
