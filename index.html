@@ -12,6 +12,7 @@
 <body>
 
     <input type="number" id="pay" readonly="readonly" placeholder="请输入数字">
+    <div class="commit">确定</div>
 
     <!--浮动层-->
 
@@ -59,11 +60,19 @@
                 $(".numb_box").slideDown(500);
             });
             //----
-            var i = 0;
-            $(".nub_ggg li a").click(function() {
-                i++
-                console.log(this)
 
+            $(".nub_ggg li a").click(function() {
+                var res = [];
+                console.log($(this).html())
+                res.push($(this).html());
+                if (res[0] == '.') {
+                    res = [];
+                }
+                if (res.indexOf('.') != -1) {
+                    res.push($(this).html());
+                }
+                console.log(res);
+                $('#pay').html(res);
             });
 
 

@@ -442,3 +442,12 @@ i {
     margin: 20px auto;
     display: block;
 }
+
+.commit {
+    width: 90%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
