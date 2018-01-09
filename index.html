@@ -59,10 +59,9 @@
             });
             //----
 
+            var res = [];
             $(".nub_ggg li a").click(function() {
-                var res = [];
                 console.log($(this).html())
-                    // res.push($(this).html());
                 if (res[0] == '.') {
                     res = [];
                 } else if ($(this).html() == '.' && res.indexOf('.') === -1) {
@@ -71,7 +70,7 @@
                     res.push($(this).html());
                 }
                 console.log(res);
-                $('#pay').html(res.join(''));
+                $('#pay').val(res.join(''));
             });
 
 
