@@ -53,14 +53,24 @@
                 console.log($(this).html())
                 if (res[0] == '.') {
                     res = [];
-                } else if ($(this).html() == '.' && res.indexOf('.') === -1) {
-                    res.push($(this).html());
+                } else if ($(this).html() == '.') {
+                    if (res.indexOf('.') === -1) {
+                        res.push($(this).html());
+                    }
                 } else {
                     res.push($(this).html());
                 }
                 console.log(res);
                 $('#pay').val(res.join(''));
             });
+
+            $('.del').on('click', function() {
+                res.pop();
+                console.log(res);
+                $('#pay').val(res.join(''));
+
+            })
+
         });
     </script>
 </body>
