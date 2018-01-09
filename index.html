@@ -6,7 +6,50 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="css/lanren.css">
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            //出现浮动层
+            $("#pay").on('click', function() {
+                $(".ftc_wzsf").slideUp(500);
+            });
+            //关闭浮动
+            $(".close").click(function() {
+                $(".ftc_wzsf").slideDown(500);
+            });
+            //数字显示隐藏
+            $(".xiaq_tb").click(function() {
+                $(".numb_box").slideUp(500);
+            });
+            $(".mm_box").click(function() {
+                $(".numb_box").slideDown(500);
+            });
+            //----
+            var i = 0;
+            $(".nub_ggg li a").click(function() {
+                i++
+                if (i < 6) {
+                    $(".mm_box li").eq(i - 1).addClass("mmdd");
+                } else {
+                    $(".mm_box li").eq(i - 1).addClass("mmdd");
+                    setTimeout(function() {
+                        location.href = "success.html";
+                    }, 500);
+                    //window.document.location="cg.html"
+                }
+            });
 
+            $(".nub_ggg li .del").click(function() {
+
+                if (i > 0) {
+                    i--
+                    $(".mm_box li").eq(i).removeClass("mmdd");
+                    i == 0;
+                }
+                //alert(i);
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -50,57 +93,7 @@
         </div>
         <div class="hbbj"></div>
     </div>
-    <script src="js/jquery.js"></script>
-    <script type="text/javascript">
-        $(function() {
-            //出现浮动层
-            $("#pay").on('click', function() {
-                $(".ftc_wzsf").slideUp(500);
-            });
-            //关闭浮动
-            $(".close").click(function() {
-                $(".ftc_wzsf").slideDown(500);
-            });
-            //数字显示隐藏
-            $(".xiaq_tb").click(function() {
-                $(".numb_box").slideUp(500);
-            });
-            $(".mm_box").click(function() {
-                $(".numb_box").slideDown(500);
-            });
-            //----
-            var i = 0;
-            $(".nub_ggg li a").click(function() {
-                i++
-                if (i < 6) {
-                    $(".mm_box li").eq(i - 1).addClass("mmdd");
-                } else {
-                    $(".mm_box li").eq(i - 1).addClass("mmdd");
-                    setTimeout(function() {
-                        location.href = "success.html";
-                    }, 500);
-                    //window.document.location="cg.html"
-                }
-            });
 
-            $(".nub_ggg li .del").click(function() {
-
-                if (i > 0) {
-                    i--
-                    $(".mm_box li").eq(i).removeClass("mmdd");
-                    i == 0;
-                }
-                //alert(i);
-
-
-
-            });
-
-
-
-
-        });
-    </script>
 </body>
 
 </html>
